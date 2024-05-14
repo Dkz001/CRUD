@@ -19,10 +19,9 @@ function App() {
       <h1>{compteur}</h1>
       <h1>Liste de fruits</h1>
       <ul>
-        
         {fruits.map((fruit) => (
           <li>
-            {fruit.nom} <button> x</button>
+            {fruit.nom} <button> delete </button>
           </li>
         ))}
       </ul>
@@ -32,10 +31,6 @@ function App() {
   );
 }
 export default App;
-
-
-
-
 
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
