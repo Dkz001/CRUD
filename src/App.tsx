@@ -5,6 +5,14 @@ function App() {
    
 
   const [compteur, setCompteur] = useState(1);
+  
+ const  [fruits, setFruits] = useState([
+
+    { id: 1, nom: "abricot" },
+    { id: 1, nom: "Banane" },
+    { id: 1, nom: "Pamplemousse" },
+    
+  ]);
 
 
   const handleClick = () => {
@@ -15,6 +23,8 @@ function App() {
 
    return <div>
      <h1>{compteur}</h1>
+<h1>Liste de fruits</h1>
+     <ul> {fruits.map((fruit) => <li>{fruit.nom }</li>)}</ul>
    
      <button onClick={handleClick} >Incrémente</button>
    </div>;
