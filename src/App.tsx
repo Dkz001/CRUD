@@ -7,12 +7,21 @@ function App() {
   const [compteur, setCompteur] = useState(1);
 
 
+  const handleClick = () => {
+   
+    setCompteur(compteur + 1)
+  }
+
+
 
 
 
 
    return <div>
-     <h1>{compteur}</h1></div>;
+     <h1>{compteur}</h1>
+   
+     <button onClick={handleClick} ></button>
+   </div>;
    
   
 }
