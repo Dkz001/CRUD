@@ -13,14 +13,10 @@ function App() {
   }
 
 
-
-
-
-
    return <div>
      <h1>{compteur}</h1>
    
-     <button onClick={handleClick} ></button>
+     <button onClick={handleClick} >Incrémente</button>
    </div>;
    
   
