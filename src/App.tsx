@@ -6,12 +6,27 @@ function App() {
 
   const [fruits, setFruits] = useState([
     { id: 1, nom: "abricot" },
-    { id: 1, nom: "Banane" },
-    { id: 1, nom: "Pamplemousse" },
+    { id: 2, nom: "Banane" },
+    { id: 3, nom: "Pamplemousse" },
   ]);
 
   const handleClick = () => {
     setCompteur(compteur + 1);
+  };
+
+
+
+  const handleDelete = (id) => {
+    console.log(id);
+    // copie
+    const fruitCopy = [...fruits];
+    // Manip Copie
+    const fruitsCopyUpdated = fruitCopy.filter((fruit) => fruit.id !== id);
+    // modif State avec setter
+    setFruits(fruitsCopyUpdated);
+
+
+
   };
 
   return (
@@ -20,8 +35,9 @@ function App() {
       <h1>Liste de fruits</h1>
       <ul>
         {fruits.map((fruit) => (
-          <li>
-            {fruit.nom} <button> delete </button>
+          <li key={fruit.id}>
+            {fruit.nom}{" "}
+            <button onClick={() => handleDelete(fruit.id)}> x </button>
           </li>
         ))}
       </ul>
