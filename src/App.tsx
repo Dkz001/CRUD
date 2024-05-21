@@ -1,20 +1,19 @@
 //  import React from 'react'
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function App() {
+  const inputRef = useRef();
   const [compteur, setCompteur] = useState(1);
-
   const [fruits, setFruits] = useState([
     { id: 1, nom: "abricot" },
     { id: 2, nom: "Banane" },
     { id: 3, nom: "Pamplemousse" },
+
   ]);
 
   const handleClick = () => {
     setCompteur(compteur + 1);
   };
-
-
 
   const handleDelete = (id) => {
     console.log(id);
@@ -29,6 +28,12 @@ function App() {
 
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    //alert("hey submit somethings!!");
+    console.log(inputRef.current.value);
+   };
+
   return (
     <div>
       <h1>{compteur}</h1>
@@ -41,8 +46,11 @@ function App() {
           </li>
         ))}
       </ul>
-
-      <button onClick={handleClick}>Incrémente</button>
+      <form action="submit" onSubmit={handleSubmit}>
+        <input ref={inputRef}  type="text" placeholder="Ajouter un fruit..." />
+        <button>Ajouter +</button>
+      </form>
+      {/* <button onClick={handleClick}>Incrémente</button> */}
     </div>
   );
 }
