@@ -7,10 +7,12 @@ function App() {
   const [fruits, setFruits] = useState([
     { id: 1, nom: "abricot" },
     { id: 2, nom: "Banane" },
-    { id: 3, nom: "Pamplemousse" },
+    { id: 3, nom: "Pamplemousse" }, 
 
   ]);
 
+  const [newFruits, setNewFruits] = useState("");
+  
   const handleClick = () => {
     setCompteur(compteur + 1);
   };
@@ -27,12 +29,29 @@ function App() {
 
 
   };
-
+  
+  const handleChange = (event) => {
+    
+    setNewFruits(event.target.value);
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
+    const newFruitsCopy = [...fruits];
+    
+    const id = new Date().getTime();
+
+
+  
+   
+
+
+
+
+
     //alert("hey submit somethings!!");
-    console.log(inputRef.current.value);
-   };
+    // console.log(inputRef.current.value);
+  };
+  
 
   return (
     <div>
@@ -47,7 +66,9 @@ function App() {
         ))}
       </ul>
       <form action="submit" onSubmit={handleSubmit}>
-        <input ref={inputRef}  type="text" placeholder="Ajouter un fruit..." />
+        <input ref={inputRef}
+          onChange={handleChange}
+          type="text" placeholder="Ajouter un fruit..." />
         <button>Ajouter +</button>
       </form>
       {/* <button onClick={handleClick}>Incrémente</button> */}
