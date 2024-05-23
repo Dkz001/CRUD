@@ -10,8 +10,8 @@ function App() {
     { id: 3, nom: "Pamplemousse" }, 
 
   ]);
-
-  const [newFruits, setNewFruits] = useState("");
+// Deuxieme partie du state
+  const [newFruits, setNewFruits] = useState("Jon");
   
   const handleClick = () => {
     setCompteur(compteur + 1);
@@ -31,25 +31,29 @@ function App() {
   };
   
   const handleChange = (event) => {
-    
+    // const afterChange = event.target.value;
+    // console.log(afterChange);
     setNewFruits(event.target.value);
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newFruitsCopy = [...fruits];
-    
-    const id = new Date().getTime();
-
-
-  
-   
-
-
-
-
-
     //alert("hey submit somethings!!");
     // console.log(inputRef.current.value);
+
+    //1. copie du state
+    const newFruitsCopy = [...fruits];
+
+    //2. Manipulation sur la copie du state
+    const id = new Date().getTime();
+    const nom = newFruits;
+    newFruitsCopy.push({ id, nom });
+
+    //3. Modifier le state avec le setter 
+
+    setFruits(newFruitsCopy);
+    setNewFruits("");
+
+
   };
   
 
@@ -67,8 +71,10 @@ function App() {
       </ul>
       <form action="submit" onSubmit={handleSubmit}>
         <input ref={inputRef}
+          value={newFruits}
           onChange={handleChange}
-          type="text" placeholder="Ajouter un fruit..." />
+          type="text" placeholder={newFruits} />
+        
         <button>Ajouter +</button>
       </form>
       {/* <button onClick={handleClick}>Incrémente</button> */}
@@ -76,6 +82,73 @@ function App() {
   );
 }
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
