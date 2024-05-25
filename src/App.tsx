@@ -1,5 +1,5 @@
 //  import React from 'react'
-import { useState, useRef } from "react";
+import { useState, useRef, KeyboardEvent } from "react";
 
 function App() {
   const inputRef = useRef();
@@ -13,11 +13,11 @@ function App() {
 // Deuxieme partie du state
   const [newFruits, setNewFruits] = useState("Jon");
   
-  const handleClick = () => {
-    setCompteur(compteur + 1);
-  };
+  // const handleClick = () => {
+  //   setCompteur(compteur + 1);
+  // };
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: number) => {
     console.log(id);
     // copie
     const fruitCopy = [...fruits];
@@ -30,12 +30,12 @@ function App() {
 
   };
   
-  const handleChange = (event) => {
+  const handleChange = (event ) => {
     // const afterChange = event.target.value;
     // console.log(afterChange);
     setNewFruits(event.target.value);
-  }
-  const handleSubmit = (event) => {
+  };
+  const handleSubmit = (event ) => {
     event.preventDefault();
     //alert("hey submit somethings!!");
     // console.log(inputRef.current.value);
