@@ -47,11 +47,10 @@ function App() {
     const id = new Date().getTime();
     const nom = newFruits;
     newFruitsCopy.push({ id, nom });
-
     //3. Modifier le state avec le setter 
 
-    setFruits(newFruitsCopy);
-    setNewFruits("");
+    // setFruits(newFruitsCopy);
+    setNewFruits(inputRef.current.value);
 
 
   };
