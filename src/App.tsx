@@ -18,16 +18,18 @@ function App() {
   // };
 
   const handleDelete = (id: number) => {
+    
     console.log(id);
     // copie
     const fruitCopy = [...fruits];
     // Manip Copie
+    const nomFruits = fruitCopy.find((nom) => nom.id == id);
     const fruitsCopyUpdated = fruitCopy.filter((fruit) => fruit.id !== id);
     // modif State avec setter
     setFruits(fruitsCopyUpdated);
 
-
-
+    
+console.log(nomFruits + " est supprimé! ");
   };
   
   const handleChange = (event ) => {
@@ -47,12 +49,11 @@ function App() {
     const id = new Date().getTime();
     const nom = newFruits;
     newFruitsCopy.push({ id, nom });
-    //3. Modifier le state avec le setter 
+    //3. Modifier le state avec le setter
 
-    // setFruits(newFruitsCopy);
-    setNewFruits(inputRef.current.value);
-
-
+    setFruits(newFruitsCopy);
+    setNewFruits("");
+    console.log(inputRef.current.value+" est ajouté! ");
   };
   
 
