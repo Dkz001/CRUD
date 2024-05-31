@@ -23,13 +23,13 @@ function App() {
     // copie
     const fruitCopy = [...fruits];
     // Manip Copie
-    const nomFruits = fruitCopy.find((nom) => nom.id == id);
+    // const nomFruits = fruitCopy.find((nom) => nom.id == id);
     const fruitsCopyUpdated = fruitCopy.filter((fruit) => fruit.id !== id);
     // modif State avec setter
     setFruits(fruitsCopyUpdated);
 
     
-console.log(nomFruits + " est supprimé! ");
+// console.log(nomFruits + " est supprimé! ");
   };
   
   const handleChange = (event ) => {
@@ -53,7 +53,7 @@ console.log(nomFruits + " est supprimé! ");
 
     setFruits(newFruitsCopy);
     setNewFruits("");
-    console.log(inputRef.current.value+" est ajouté! ");
+    alert(inputRef.current.value+" est ajouté! ");
   };
   
 
