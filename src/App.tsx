@@ -53,7 +53,7 @@ function App() {
 
     setFruits(newFruitsCopy);
     setNewFruits("");
-    alert(inputRef.current.value+" est ajouté! ");
+    // alert(inputRef.current.value+" est ajouté! ");
   };
   
 
