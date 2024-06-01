@@ -2,15 +2,14 @@
 import { useState, useRef } from "react";
 
 function App() {
-  const [open, setOpen] = useState(false);
   const inputRef = useRef();
   const [compteur, setCompteur] = useState(1);
   const [fruits, setFruits] = useState([
-    { id: 1, nom: "abricot" },
+    { id: 1, nom: "Abricot" },
     { id: 2, nom: "Banane" },
     { id: 3, nom: "Pamplemousse" },
-    { id: 3, nom: "Peche" },
-    { id: 3, nom: "Orange" },
+    { id: 4, nom: "Peche" },
+    { id: 5, nom: "Orange" },
   ]);
   // Deuxieme partie du state  
   const [newFruits, setNewFruits] = useState("Jon");
@@ -58,8 +57,8 @@ function App() {
 
   return (
   
-      <div>
-        <h1>{compteur}</h1>
+      <div className="card_box">
+        {/* <h1>{compteur}</h1> */}
         <h1>Liste de fruits</h1>
         <ul>
           {fruits.map((fruit) => (
