@@ -1,27 +1,26 @@
 //  import React from 'react'
-import { useState, useRef, KeyboardEvent } from "react";
-import Modal from "./components/Modal"
-import Trash from "./icons/Trash"
+import { useState, useRef } from "react";
+import Modal from "./components/modal.jsx";
 
 function App() {
-    const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const inputRef = useRef();
   const [compteur, setCompteur] = useState(1);
   const [fruits, setFruits] = useState([
     { id: 1, nom: "abricot" },
     { id: 2, nom: "Banane" },
-    { id: 3, nom: "Pamplemousse" }, 
-
+    { id: 3, nom: "Pamplemousse" },
+    { id: 3, nom: "Peche" },
+    { id: 3, nom: "Orange" },
   ]);
-// Deuxieme partie du state
+  // Deuxieme partie du state  
   const [newFruits, setNewFruits] = useState("Jon");
-  
+
   // const handleClick = () => {
   //   setCompteur(compteur + 1);
   // };
 
   const handleDelete = (id: number) => {
-    
     console.log(id);
     // copie
     const fruitCopy = [...fruits];
@@ -31,16 +30,15 @@ function App() {
     // modif State avec setter
     setFruits(fruitsCopyUpdated);
 
-    
-// console.log(nomFruits + " est supprimé! ");
+    // console.log(nomFruits + " est supprimé! ");
   };
-  
-  const handleChange = (event ) => {
+
+  const handleChange = (event) => {
     // const afterChange = event.target.value;
     // console.log(afterChange);
     setNewFruits(event.target.value);
   };
-  const handleSubmit = (event ) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     //alert("hey submit somethings!!");
     // console.log(inputRef.current.value);
@@ -58,33 +56,35 @@ function App() {
     setNewFruits("");
     // alert(inputRef.current.value+" est ajouté! ");
   };
-  
 
   return (
-    <div>
-      <h1>{compteur}</h1>
-      <h1>Liste de fruits</h1>
-      <ul>
-        {fruits.map((fruit) => (
-          <li key={fruit.id}>
-            {fruit.nom}{" "}
-            <button onClick={() => handleDelete(fruit.id)}> x </button>
-          </li>
-        ))}
-      </ul>
-      <form action="submit" onSubmit={handleSubmit}>
-        <input ref={inputRef}
-          value={newFruits}
-          onChange={handleChange}
-          type="text" placeholder={newFruits} />
-        
-        <button>Ajouter +</button>
-      </form>
-      {/* <button onClick={handleClick}>Incrémente</button> */}
-    </div>
+    <main className="App">
+      <div>
+        <h1>{compteur}</h1>
+        <h1>Liste de fruits</h1>
+        <ul>
+          {fruits.map((fruit) => (
+            <li key={fruit.id}>
+              {fruit.nom}{" "}
+              <button onClick={() => handleDelete(fruit.id)}> x </button>
+            </li>
+          ))}
+        </ul>
+        <form action="submit" onSubmit={handleSubmit}>
+          <input
+            ref={inputRef}
+            value={newFruits}
+            onChange={handleChange}
+            type="text"
+            placeholder={newFruits}
+          />
 
+          <button>Ajouter +</button>
+        </form>
+        {/* <button onClick={handleClick}>Incrémente</button> */}
+      </div>
 
-       <button className="btn btn-danger" onClick={() => setOpen(true)}>
+      <button className="btn btn-danger" onClick={() => setOpen(true)}>
         <Trash /> Delete
       </button>
 
@@ -108,76 +108,10 @@ function App() {
           </div>
         </div>
       </Modal>
+    </main>
   );
 }
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
