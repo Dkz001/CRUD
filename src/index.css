@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.945);
-  background: linear-gradient(#24242c, rgb(80, 65, 121),rgb(121, 117, 161));
+  background: linear-gradient(#18181d, rgb(80, 65, 121),rgb(121, 117, 161));
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,14 +14,22 @@
 }
 .card_box
 {
-  background-color: rgba(176, 204, 255, 0.137);
+  background-color: rgba(255, 255, 255, 0.11);
   /* background: #888; */
   padding: 20px;
   border-radius: 20px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.151);
   transition: 1.5s;
+  
+ 
 
+}
 
+.card_logo
+{
+
+  width: 90px;
+  
 }
 
 a {
