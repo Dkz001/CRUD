@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Fruit from "./components/Fruit";
+//import Fruit from "./components/Fruit";
 import FruitForm from "./components/FruitForm";
 
 function App() {
@@ -33,9 +33,9 @@ function App() {
     setFruits(fruitsCopy);
   };
 
-  const afficherFruitPrefere = (fruitNom) => {
-    alert(`J'aime trop ce fruit: ${fruitNom}`);
-  };
+  // const afficherFruitPrefere = (fruitNom) => {
+  //   alert(`J'aime trop ce fruit: ${fruitNom}`);
+  // };
 
   // affichage (render)
   return (
@@ -43,9 +43,7 @@ function App() {
       <h1>Liste de fruits</h1>
       <ul>
         {fruits.map((fruit) => (
-          <li key={fruit.id}>
-            {fruit.nom}{" "}
-            <button onClick={() => handleDelete(fruit.id)}> x </button>
+          <li key={fruit.id}> {fruit.nom}{" "}    <button onClick={() => handleDelete(fruit.id)}> x </button>
           </li>
         ))}
       </ul>
