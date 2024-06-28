@@ -8,6 +8,7 @@ function App() {
     { id: 1, nom: "Abricot" },
     { id: 2, nom: "Banane" },
     { id: 3, nom: "Cerise" },
+    { id: 4, nom: "Peche" },
   ]);
 
   // comportements
